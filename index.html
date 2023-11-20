@@ -3,109 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vefforritunarbúðin</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+    <title>Hópverkefni 2</title>
 </head>
 <body>
-    <div class="nav-container">
-        <div class="logo-container">
-            <div class="logo-text">Vefforritunarbúðin</div>
-        </div>
-    <ul class="nav-menu">
-        <li><a href="">Nýskrá</a></li>
-        <li><a href="">Innskrá</a></li>
-        <li><a href="">Karfa</a></li>
-        <li><a href="">Nýjar vörur</a></li>
-        <li><a href="">Flokkar</a></li>
-    </ul>
-    </div>
+    <header class="header">
+        <div class="logo">Vefforritunarbúðin</div>
+        <nav class="nav-menu">
+            <ul>
+                <a href="">Nýskrá</a>
+                <a href="">Innskrá</a>
+                <a href="">Karfa</a>
+                <a href="">Nýjar vörur</a>
+                <a href="">Flokkar</a>
+            </ul>
+        </nav>    
+    </header>
     <div class="body-content">
         <h2 class=" body-title">Nýjar vörur</h2>
-        <div class="image-container">
+        <div class="products-grid">
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="./img/shoes.jpeg" alt="Adidas shoes" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 1</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name">Adidas Shoes</h3>
+                    <p class="category">Shoes</p>
+                    <p class="price">5000 isk</p>
                 </div>
             </div>
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="./img/camera.jpeg" alt="Camera" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 1</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name">Canon camera</h3>
+                    <p class="category">Electronics</p>
+                    <p class="price">30000 isk</p>
                 </div>
             </div>
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="./img/belt.jpeg" alt="Leather Belt" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 2</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name">Leather Belt</h3>
+                    <p class="category">Accessories</p>
+                    <p class="price">3000 isk</p>
                 </div>
             </div>
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="./img/chair.jpeg" alt="Black Chair" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 3</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name">Black Chair</h3>
+                    <p class="category">Chair</p>
+                    <p class="price">7500 isk</p>
                 </div>
             </div>
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="" alt="" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 4</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name"></h3>
+                    <p class="category"></p>
+                    <p class="price"></p>
                 </div>
             </div>
             <div class="product">
                 <a href="">
-                    <img src="" alt="">
+                    <img src="" alt="" class="resize-image">
                 </a>
                 <div class="product-info">
-                    <h3>Product Name 5</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-                <div class="product-info">
-                    <h3>Product Name 6</h3>
-                    <p class="category">XXX</p>
-                    <p>Price: x kr.-</p>
+                    <h3 class="product-name"></h3>
+                    <p class="category"></p>
+                    <p class="price"></p>
                 </div>
             </div>
         </div>
+        
         <div class="category-title">skoðaðu vöruflokkana okkar</div>
         <div class="category-links">
-            <a href="">Clothing</a>
-            <a href="">Shoes</a>
-            <a href="">Garden</a>
-            <a href="">Computers</a>
-            <a href="">Movies</a>
-            <a href="">Books</a>
-            <a href="">Jewelery</a>
-            <a href="">Electronics</a>
-            <a href="">Outdoors</a>
-            <a href="">Grocery</a>
-            <a href="">Sports</a>
-            <a href="">Tools</a>
+            <a href="/pages/category/clothing.html">Clothing</a>
+            <a href="/pages/category/shoes.html">Shoes</a>
+            <a href="/pages/category/garden.html">Garden</a>
+            <a href="/pages/category/computers.html">Computers</a>
+            <a href="/pages/category/Movies">Movies</a>
+            <a href="/pages/category/books.html">Books</a>
+            <a href="/category/jewelery.html">Jewelery</a>
+            <a href="/pages/category/electronics.html">Electronics</a>
+            <a href="/pages/category/outdoors.html">Outdoors</a>
+            <a href="/pages/category/grocery.html">Grocery</a>
+            <a href="/pages/category/sports.html">Sports</a>
+            <a href="/pages/category/tools.html">Tools</a>
         </div>
     </div>
 </body>
