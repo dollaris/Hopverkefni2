@@ -1,0 +1,39 @@
+{
+  "name": "hopverkefni2",
+  "description": "Group member:\r 1. Styrmir Örn, soa61@hi.is, Github: stimmi1986\r 2. Nouvan Shebubakar, mns2@hi.is, Github: dollaris",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dollaris/Hopverkefni2.git"
+  },
+  "keywords": [
+    "Vefforritun",
+    "Hópverkefni",
+    "2"
+  ],
+  "author": "Nouvan Shebubakar og Styrmir Örn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dollaris/Hopverkefni2/issues"
+  },
+  "homepage": "https://github.com/dollaris/Hopverkefni2#readme",
+  "scripts": {
+    "lint": "eslint ./**/*.js",
+    "prettier": "prettier --write  --single-quote .",
+    "test": "test",
+    "concurrently": "concurrently",
+    "dev": "concurrently \"browser-sync start --server --files ./src/ styles.css index.html\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "browser-sync": "^2.29.3",
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "prettier": "^3.1.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}
