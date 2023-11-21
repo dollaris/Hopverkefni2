@@ -1,12 +1,12 @@
-import { renderNavbar, renderFrontpage, renderButton, renderAllCategories } from './lib/ui.js';
+import { renderNavbar, renderHeropage, renderButton, renderAllCategories } from './lib/ui.js';
 
-async function renderContent() {
+async function renderHomePage() {
   const mainElement = document.querySelector('main');
 
   const navbar = await renderNavbar();
   mainElement.appendChild(navbar);
 
-  const frontpage = await renderFrontpage();
+  const frontpage = await renderHeropage();
   mainElement.appendChild(frontpage);
 
   const button = await renderButton();
@@ -17,5 +17,5 @@ async function renderContent() {
 }
 
 window.onload = () => {
-  renderContent();
+  renderHomePage();
 };

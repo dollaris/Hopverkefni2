@@ -2,7 +2,6 @@ import {  getProducts, getCategories } from './api.js';
 import { el } from './elements.js';
 
 
-// this is the navbar
 export async function renderNavbar() {
   const navbar = el('div', { class: 'navbar' },
     el('div', { class: 'navbar-logo' },
@@ -20,10 +19,9 @@ export async function renderNavbar() {
   return navbar;
 }
 
-export async function renderFrontpage() {
+export async function renderHeropage() {
   const exampleNewProduct = el('div', { class: 'new-products' });
   const products = await getProducts({ limit: 6 });
-
   const productsTitle = el('h2', { class: 'products-title' }, 'Skoða vöruflokkana okkar');
   exampleNewProduct.appendChild(productsTitle);
 
@@ -31,9 +29,9 @@ export async function renderFrontpage() {
     const noResultNewProduct = el('div', {}, 'Engar niðurstöður fyrir nýjar vörur');
     exampleNewProduct.appendChild(noResultNewProduct);
   } else {
-    const productContainer = el('div', { class: 'product-container' }); // Create a container for the cards
+    const productContainer = el('div', { class: 'product-container' });
     for (const product of products) {
-      const card = el('div', { class: 'card' }, // Create individual cards
+      const card = el('div', { class: 'card' },
         el('img', { src: product.image }),
         el('div', {class: 'card-text'},
           el('div', {class: 'card-title'}, 
@@ -45,9 +43,9 @@ export async function renderFrontpage() {
           ),
         )
       );
-      productContainer.appendChild(card); // Append each card to the container
+      productContainer.appendChild(card);
     }
-    exampleNewProduct.appendChild(productContainer); // Append the container to the main product section
+    exampleNewProduct.appendChild(productContainer);
   }
 
   return exampleNewProduct;
@@ -55,7 +53,7 @@ export async function renderFrontpage() {
 
 export async function renderButton() {
   const button = el('div', { class: 'button' },
-    el('a', { href: 'http://localhost:3000/categories' }, 'skoða alla flokka')
+    el('a', { href: '/categories' }, 'skoða alla flokka')
   )
   return button;
 }
