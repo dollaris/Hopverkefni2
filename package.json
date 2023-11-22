@@ -23,7 +23,7 @@
     "prettier": "prettier --write  --single-quote .",
     "test": "test",
     "concurrently": "concurrently",
-    "dev": "concurrently \"browser-sync start --server --files ./src/ styles.css index.html\""
+    "dev": "browser-sync start --server --files ./src/ styles.css index.html"
   },
   "devDependencies": {
     "concurrently": "^8.2.1",

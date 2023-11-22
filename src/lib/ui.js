@@ -52,9 +52,15 @@ export async function renderHeropage() {
 }
 
 export async function renderButton() {
-  const button = el('div', { class: 'button' },
-    el('a', { href: '/categories' }, 'skoða alla flokka')
-  )
+  const button = el('div', { class: 'button' });
+
+  const link = el('a', { href: '/categories' }, 'Skoða alla flokka');
+  link.addEventListener('click', async (event) => {
+    event.preventDefault();
+    renderCategoriesPage();
+  });
+
+  button.appendChild(link);
   return button;
 }
 
@@ -81,6 +87,21 @@ export async function renderAllCategories() {
   }
 
   return allCategories;
+}
+
+export async function renderCategoriesPage() {
+  const mainElement = document.querySelector('main');
+  mainElement.innerHTML = '';
+
+  try {
+    const navbar = await renderNavbar();
+    mainElement.appendChild(navbar);
+
+    const categories = await renderAllCategories();
+    mainElement.appendChild(categories);
+  } catch (error) {
+    console.error('Error rendering categories page:', error);
+  }
 }
 
 
