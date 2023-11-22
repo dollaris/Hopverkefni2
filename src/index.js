@@ -2,18 +2,22 @@ import {
   renderNavbar, 
   renderSearch, 
   renderButton, 
-  renderAllCategories, 
-  renderSamples 
+  renderSamplesCategories, 
+  renderSamplesProduct 
 } from './lib/ui.js';
 import { API_URL } from './lib/api.js';
+
+async function renderNav() {
+  const navElement = document.querySelector('div');
+
+  const navbar = await renderNavbar();
+  navElement.appendChild(navbar);
+}
 
 async function renderHomePage() {
   const mainElement = document.querySelector('main');
 
-  const navbar = await renderNavbar();
-  mainElement.appendChild(navbar);
-
-  const samples = await renderSamples(API_URL);
+  const samples = await renderSamplesProduct(API_URL);
   mainElement.appendChild(samples);
 
   const button = await renderButton();
@@ -22,10 +26,11 @@ async function renderHomePage() {
   const productSearch = await renderSearch();
   mainElement.appendChild(productSearch);
 
-  const categories = await renderAllCategories();
+  const categories = await renderSamplesCategories();
   mainElement.appendChild(categories);
 }
 
 window.onload = () => {
+  renderNav();
   renderHomePage();
 };

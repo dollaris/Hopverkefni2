@@ -6,23 +6,35 @@ export async function sleep(ms) {
   });
 }
 
-export async function getProducts(searchTerm) {
+export async function getProducts(limit) {
+  const url = new URL('products', API_URL);
+  url.searchParams.set('limit', limit);
+
   try {
-    let url = `${API_URL}/products/`;
-
-    if (searchTerm) {
-      const search = searchTerm ? `?search=${encodeURIComponent(JSON.stringify(searchTerm))}` : '';
-      url += search;
-    }
-
     const response = await fetch(url);
-
     if (!response.ok) {
       throw new Error('Failed to fetch products');
     }
-
     const data = await response.json();
     return data.items;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return [];
+  }
+}
+
+export async function productPageination(limit, offset) {
+  const url = new URL(API_URL, `/products/?offset=${offset}&limit=${limit}`);
+  url.searchParams.set('limit', limit);
+  url.searchParams.set('offset', offset);
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch products list');
+    }
+    const data = await response.json();
+    return data.total;
   } catch (error) {
     console.error('Error fetching products:', error);
     return [];
@@ -35,7 +47,7 @@ export async function getCategories(limit) {
   url.searchParams.set('limit', limit);
 
   try {
-    const response = await fetch(`${API_URL}/categories`);
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Failed to fetch categories');
     }
@@ -44,22 +56,5 @@ export async function getCategories(limit) {
   } catch (error) {
     console.error('Error fetching categories:', error);
     return [];
-  }
-}
-
-export async function getCategoriesById(id) {
-  const url = new URL('categories', API_URL);
-  url.searchParams.set('id', id);
-
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch category with ID ${id}`);
-    }
-    const data = await response.json();
-    return data.items;
-  } catch (error) {
-    console.error(`Error fetching category with ID ${id}:`, error);
-    return null;
   }
 }
