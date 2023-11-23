@@ -1,0 +1,59 @@
+/* Button */
+.products-span {
+  cursor: pointer;
+}
+
+.categories-span {
+  cursor: pointer;
+}
+
+.button {
+  margin: 10px 0px;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: #f9f9f9;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.button a {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+
+.button:hover {
+  background-color: #386581;
+}
+
+.searchButton {
+  margin: 10px 0px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: #f9f9f9;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #386581;
+}
+
+.showCategories {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing);
+}

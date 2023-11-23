@@ -1,0 +1,88 @@
+/* Products Cards */
+.products-title {
+  margin: 30px 0px 20px 0px;
+}
+
+.new-products {
+  margin: 20px 0px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 0px;
+  justify-items: center;
+}
+
+@media (max-width: 810px) {
+  .product-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 811px) and (max-width: 1220px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1221px) {
+  .product-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.card-price {
+  display: flex;
+  align-items: center;
+}
+
+.p-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.c-title {
+  font-size: 16px;
+}
+
+.p-price {
+  font-size: 32px;
+}
+
+.searchProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paginationButton {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}

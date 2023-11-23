@@ -13,34 +13,32 @@ export async function getProducts(limit) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Failed to fetch products');
+      throw new Error('Mistókst að sækja gögn');
     }
     const data = await response.json();
     return data.items;
   } catch (error) {
-    console.error('Error fetching products:', error);
+    console.error('Villa við að ná í vörur:', error);
     return [];
   }
 }
 
-export async function productPageination(limit, offset) {
-  const url = new URL(API_URL, `/products/?offset=${offset}&limit=${limit}`);
-  url.searchParams.set('limit', limit);
-  url.searchParams.set('offset', offset);
+export async function productSearch(searchTerm = '') {
+  const url = new URL('products', API_URL);
+  url.searchParams.set('search', searchTerm);
 
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Failed to fetch products list');
+      throw new Error('Mistókst að sækja gögn');
     }
     const data = await response.json();
-    return data.total;
+    return data.items;
   } catch (error) {
-    console.error('Error fetching products:', error);
+    console.error('Villa við að ná í vörur:', error);
     return [];
   }
 }
-
 
 export async function getCategories(limit) {
   const url = new URL(`${API_URL}/categories`);
@@ -49,12 +47,12 @@ export async function getCategories(limit) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Failed to fetch categories');
+      throw new Error('Mistókst að sækja gögn');
     }
     const data = await response.json();
     return data.items;
   } catch (error) {
-    console.error('Error fetching categories:', error);
+    console.error('Villa við að ná í flokka:', error);
     return [];
   }
 }
